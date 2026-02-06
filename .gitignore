@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 .kotlin
 .xml
+.noai
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
