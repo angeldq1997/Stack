@@ -20,22 +20,30 @@ public class StackTest {
     }
 
     @Test
+    void whenStackingTwiceAndUnstackingOnce_stackIsNotEmpty(){
+        this.stack.stacking(1);
+        this.stack.stacking(2);
+        this.stack.unstacking();
+        assertFalse(this.stack.isEmpty());
+    }
+
+    @Test
     void whenStackSomething_StackIsNotEmpty(){
-        stack.stacking(0);
+        this.stack.stacking(0);
         assertFalse(this.stack.isEmpty());
     }
 
     @Test
     void whenUnstackingStackIsEmpty_throwsExceptionUnderflow(){
         Exception exception = assertThrows(Stack.UnderflowException.class, () -> {
-            stack.unstacking();
+            this.stack.unstacking();
         });
     }
 
     @Test
     void whenStackingAndUnstacking_stackIsEmpty(){
-        stack.stacking(0);
-        stack.unstacking();
-        assertTrue(stack.isEmpty());
+        this.stack.stacking(0);
+        this.stack.unstacking();
+        assertTrue(this.stack.isEmpty());
     }
 }

@@ -2,21 +2,21 @@ package ed.dam;
 
 // ed.dam.Stack.java
 public class Stack {
-    private boolean isEmpty = true;
+    private int numberElements = 0;
 
     public boolean isEmpty() {
-        return this.isEmpty;
+        return numberElements == 0;
     }
 
     public void stacking(int element){
-        this.isEmpty = false;
+        numberElements++;
     }
 
     public void unstacking(){
-        if (isEmpty) {
+        if (isEmpty()) {
             throw new UnderflowException();
         }
-        isEmpty = true;
+        numberElements--;
     }
 
     public class UnderflowException extends RuntimeException{
