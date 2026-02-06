@@ -46,4 +46,12 @@ public class StackTest {
         this.stack.unstacking();
         assertTrue(this.stack.isEmpty());
     }
+
+    @Test
+    void whenStackingXYUnstacking_getX(){
+        stack.stacking(0);
+        assertEquals(0, stack.unstacking());
+        stack.stacking(99);
+        assertEquals(99, stack.unstacking());
+    }
 }
