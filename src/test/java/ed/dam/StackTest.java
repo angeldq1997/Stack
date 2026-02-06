@@ -69,4 +69,12 @@ public class StackTest {
         stack.stacking(5);
         assertEquals(2, stack.getNumberElements());
     }
+
+    @Test
+    void whenStackingThrice_stackSizeIsThree(){
+        stack.stacking(1);
+        stack.stacking(5);
+        stack.stacking(20);
+        assertEquals(3, stack.getNumberElements());
+    }
 }
