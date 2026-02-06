@@ -3,15 +3,14 @@ package ed.dam;
 // ed.dam.Stack.java
 public class Stack {
     private int numberElements = 0;
-    private int element = -1;
+    private int[] elements = new int[2];
 
     public boolean isEmpty() {
         return this.numberElements == 0;
     }
 
     public void stacking(int element){
-        this.numberElements++;
-        this.element = element;
+        this.elements[numberElements++] = element;
     }
 
     public int unstacking(){
@@ -19,7 +18,7 @@ public class Stack {
             throw new UnderflowException();
         }
         this.numberElements--;
-        return element;
+        return this.elements[this.numberElements];
     }
 
     public class UnderflowException extends RuntimeException{

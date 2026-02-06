@@ -52,6 +52,14 @@ public class StackTest {
         stack.stacking(0);
         assertEquals(0, stack.unstacking());
         stack.stacking(99);
+        assertEquals(0, stack.unstacking());
+    }
+
+    @Test
+    void whenStackingXThenY_unstackingYThenX(){
+        stack.stacking(0);
+        stack.stacking(99);
         assertEquals(99, stack.unstacking());
+        assertEquals(0, stack.unstacking());
     }
 }
