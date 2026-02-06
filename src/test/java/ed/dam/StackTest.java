@@ -72,6 +72,7 @@ public class StackTest {
 
     @Test
     void whenStackingThrice_stackSizeIsThree(){
+        stack.setLimit(3);
         stack.stacking(1);
         stack.stacking(5);
         stack.stacking(20);
@@ -80,10 +81,24 @@ public class StackTest {
 
     @Test
     void whenStackHasLimitTwo_stackingThriceThrowsExceptionOverflow(){
+        stack.setLimit(2);
         stack.stacking(1);
         stack.stacking(3);
         Exception exception = assertThrows( Stack.OverflowExcepcion.class, () -> {
             stack.stacking(30);
+        });
+    }
+
+    @Test
+    void whenStackHasLimitFive_stackingSixTimesThrowsExceptionOverflow(){
+        stack.setLimit(5);
+        stack.stacking(1);
+        stack.stacking(3);
+        stack.stacking(40);
+        stack.stacking(999);
+        stack.stacking(-12);
+        Exception exception = assertThrows( Stack.OverflowExcepcion.class, () -> {
+            stack.stacking(10);
         });
     }
 }
