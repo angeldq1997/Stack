@@ -62,4 +62,11 @@ public class StackTest {
         assertEquals(99, stack.unstacking());
         assertEquals(0, stack.unstacking());
     }
+
+    @Test
+    void whenStackingTwice_stackSizeIsTwo(){
+        stack.stacking(1);
+        stack.stacking(5);
+        assertEquals(2, stack.getNumberElements());
+    }
 }

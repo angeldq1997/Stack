@@ -5,6 +5,10 @@ public class Stack {
     private int numberElements = 0;
     private int[] elements = new int[2];
 
+    public int getNumberElements() {
+        return numberElements;
+    }
+
     public boolean isEmpty() {
         return this.numberElements == 0;
     }
