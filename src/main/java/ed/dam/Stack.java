@@ -11,4 +11,12 @@ public class Stack {
     public void stacking(int element){
         this.isEmpty = false;
     }
+
+    public void unstacking(){
+        throw new UnderflowException();
+    }
+
+    public class UnderflowException extends RuntimeException{
+
+    }
 }
