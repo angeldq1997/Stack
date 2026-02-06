@@ -25,4 +25,12 @@ public class StackTest {
         stack.stacking(0);
         assertFalse(stack.isEmpty());
     }
+
+    @Test
+    void whenUnstackingStackIsEmpty_throwsExceptionUnderflow(){
+        Exception exception = assertThrows(Stack.UnderflowException.class, () -> {
+            stack.unstacking();
+        });
+        }
+    }
 }
