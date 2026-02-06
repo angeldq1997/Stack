@@ -3,7 +3,7 @@ package ed.dam;
 // ed.dam.Stack.java
 public class Stack {
     private int numberElements = 0;
-    private int[] elements = new int[3];
+    private int[] elements = new int[2];
 
     public int getNumberElements() {
         return numberElements;
@@ -14,7 +14,11 @@ public class Stack {
     }
 
     public void stacking(int element){
-        this.elements[numberElements++] = element;
+        if ((numberElements+1) > elements.length){
+            throw new OverflowExcepcion();
+        }
+        this.elements[numberElements] = element;
+        this.numberElements++;
     }
 
     public int unstacking(){
@@ -26,6 +30,8 @@ public class Stack {
     }
 
     public class UnderflowException extends RuntimeException{
+    }
 
+    public class OverflowExcepcion extends RuntimeException{
     }
 }

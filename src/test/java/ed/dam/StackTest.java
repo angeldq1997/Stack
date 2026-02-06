@@ -77,4 +77,13 @@ public class StackTest {
         stack.stacking(20);
         assertEquals(3, stack.getNumberElements());
     }
+
+    @Test
+    void whenStackHasLimitTwo_stackingThriceThrowsExceptionOverflow(){
+        stack.stacking(1);
+        stack.stacking(3);
+        Exception exception = assertThrows( Stack.OverflowExcepcion.class, () -> {
+            stack.stacking(30);
+        });
+    }
 }
