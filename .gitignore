@@ -3,7 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .kotlin
-.xml
+*.xml
 .noai
 
 ### IntelliJ IDEA ###
@@ -40,3 +40,6 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/encodings.xml
+/.idea/misc.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
