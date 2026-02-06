@@ -13,7 +13,10 @@ public class Stack {
     }
 
     public void unstacking(){
-        throw new UnderflowException();
+        if (isEmpty) {
+            throw new UnderflowException();
+        }
+        isEmpty = true;
     }
 
     public class UnderflowException extends RuntimeException{

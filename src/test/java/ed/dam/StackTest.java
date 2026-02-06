@@ -16,13 +16,13 @@ public class StackTest {
 
     @Test
     void whenCreatingStack_IsEmpty() {
-        assertTrue(stack.isEmpty());
+        assertTrue(this.stack.isEmpty());
     }
 
     @Test
     void whenStackSomething_StackIsNotEmpty(){
         stack.stacking(0);
-        assertFalse(stack.isEmpty());
+        assertFalse(this.stack.isEmpty());
     }
 
     @Test
@@ -30,5 +30,12 @@ public class StackTest {
         Exception exception = assertThrows(Stack.UnderflowException.class, () -> {
             stack.unstacking();
         });
+    }
+
+    @Test
+    void whenStackingAndUnstacking_stackIsEmpty(){
+        stack.stacking(0);
+        stack.unstacking();
+        assertTrue(stack.isEmpty());
     }
 }
