@@ -48,11 +48,11 @@ public class StackTest {
     }
 
     @Test
-    void whenStackingXYUnstacking_getX(){
+    void whenStackingXYUnstacking_getXThenY(){
         stack.stacking(0);
         assertEquals(0, stack.unstacking());
         stack.stacking(99);
-        assertEquals(0, stack.unstacking());
+        assertEquals(99, stack.unstacking());
     }
 
     @Test
@@ -68,5 +68,13 @@ public class StackTest {
         stack.stacking(1);
         stack.stacking(5);
         assertEquals(2, stack.getNumberElements());
+    }
+
+    @Test
+    void whenStackingThrice_stackSizeIsThree(){
+        stack.stacking(1);
+        stack.stacking(5);
+        stack.stacking(20);
+        assertEquals(3, stack.getNumberElements());
     }
 }

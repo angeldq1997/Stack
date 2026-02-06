@@ -3,7 +3,7 @@ package ed.dam;
 // ed.dam.Stack.java
 public class Stack {
     private int numberElements = 0;
-    private int[] elements = new int[2];
+    private int[] elements = new int[3];
 
     public int getNumberElements() {
         return numberElements;
